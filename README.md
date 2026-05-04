@@ -1,3 +1,32 @@
+# 🐾 PawPal+: Agentic Pet Care Assistant
+
+**An intelligent, self-correcting scheduling system for busy pet owners.**
+
+## 📌 Original Project Overview
+In Modules 1-3, **PawPal+** was developed as a deterministic, Streamlit-based scheduling application. Its original goal was to allow pet owners to input daily care tasks (with priority and duration constraints) and output a time-optimized daily schedule. It utilized standard Python algorithms (greedy sorting) to calculate time budgets and featured local JSON serialization for data persistence.
+
+## 🚀 Title & Summary
+**PawPal+ (Agentic AI Upgrade)** transforms the original static scheduler into a dynamic, reasoning engine. This project utilizes an **Agentic Workflow** powered by the Gemini API to not only draft daily schedules but to actively evaluate its own math against strict user time constraints. It bridges the gap between traditional software engineering (rigid constraints, error logging, automated tests) and generative AI (dynamic reasoning, empathetic user output) to ensure a pet's most critical needs are met even when the owner is short on time.
+
+## 🏗️ Architecture Overview
+PawPal+ uses a "Planner-Critic" agentic architecture to ensure reliability:
+
+1. **User Input:** The owner sets a daily time budget (e.g., 120 mins) via the Streamlit UI.
+2. **Scheduler Engine:** A Python backend compiles pending tasks and formats the state into an AI context prompt.
+3. **Generator Agent (The Planner):** An LLM drafts a schedule prioritizing HIGH-priority tasks.
+4. **Evaluator Agent (The Critic):** A secondary LLM prompt acts as an automated tester, verifying if the drafted schedule mathematically exceeds the owner's time budget.
+5. **Self-Correction Loop:** If the Evaluator detects a budget violation, the system automatically prompts the Generator to try again (up to 3 times) and drop lower-priority tasks.
+6. **Guardrails:** If the AI fails its checks or the API goes offline, the system safely falls back to a deterministic Python sorting algorithm.
+
+## ⚙️ Setup Instructions
+
+Follow these steps to run the application locally:
+
+1. **Clone the repository and navigate to the directory:**
+   ```bash
+   git clone <your-repo-link>
+   cd pawpal-agentic
+
 # PawPal+ (Module 2 Project)
 
 You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
